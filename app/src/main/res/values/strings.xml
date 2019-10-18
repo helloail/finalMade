@@ -1,0 +1,27 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ForYouDicodingSubmissionThree</string>
+    <string name="Language">Language :</string>
+
+    <string name="Judul">Title :</string>
+    <string name="popularity">Popularity :</string>
+    <string name="rilis">Release Date :</string>
+    <string name="Storyline">Storyline</string>
+    <string name="menit">minutes</string>
+    <string name="review">review</string>
+    <string name="title">Warkop Partner</string>
+    <string name="tvshow">TV SHOW</string>
+    <string name="movie">MOVIES</string>
+    <string name="genre">First Air Date :</string>
+    <string name="country">Country :</string>
+    <string name="language">Ubah Bahasa</string>
+    <string name="Notifikasi">Notification</string>
+    <string name="pengaturan">Setting</string>
+    <string name="Notifikasi_peringatan">Notifikasi Peringatan</string>
+    <string name="Notifikasi_Rilis">Notifikasi Rilis</string>
+
+
+
+
+    <string name="change_language">Change Language Setting</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="reminder"
+        android:title="@string/Notifikasi_peringatan"
+        app:iconSpaceReserved="false"/>
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="release"
+        android:title="@string/Notifikasi_Rilis"
+        app:iconSpaceReserved="false"/>
+</PreferenceScreen>
