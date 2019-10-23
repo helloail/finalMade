@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.foryoudicodingsubmissionfour.helper.Tools;
 import com.example.foryoudicodingsubmissionfour.view.activity.search.SearchActivityFilm;
 import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterList;
 import com.example.foryoudicodingsubmissionfour.helper.ViewAnimation;
@@ -46,6 +47,7 @@ public class MoviesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
+        Tools.initstetho(getContext());
         recyclerView = view.findViewById(R.id.recyclerView);
         lyt_progress = view.findViewById(R.id.lyt_progress);
         initRecyclerview();

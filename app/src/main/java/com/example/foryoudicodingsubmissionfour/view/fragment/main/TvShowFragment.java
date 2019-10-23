@@ -33,6 +33,7 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterList;
+import com.example.foryoudicodingsubmissionfour.helper.Tools;
 import com.example.foryoudicodingsubmissionfour.model.FilmInit;
 import com.example.foryoudicodingsubmissionfour.view.activity.search.SearchActivityTvShow;
 import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterTvShow;
@@ -70,6 +71,7 @@ public class TvShowFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
+        Tools.initstetho(getContext());
         recyclerView = view.findViewById(R.id.recyclerView);
         lyt_progress = view.findViewById(R.id.lyt_progress);
         initRecyclerview();
