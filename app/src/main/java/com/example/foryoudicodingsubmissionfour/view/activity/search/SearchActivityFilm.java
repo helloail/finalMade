@@ -40,6 +40,7 @@ public class SearchActivityFilm extends AppCompatActivity implements  android.wi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
+        Tools.initstetho(this);
         initToolbar();
         initSearch();
         initRecyclerview();

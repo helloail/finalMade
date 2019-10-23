@@ -39,6 +39,7 @@ public class SearchActivityTvShow extends AppCompatActivity implements  android.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
+        Tools.initstetho(this);
         initToolbar();
         initSearch();
         initRecyclerview();
