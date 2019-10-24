@@ -61,7 +61,7 @@ public class AdapterSearchTvShow extends RecyclerView.Adapter<AdapterSearchTvSho
         final SearchTvShowInit data = list.get(i);
         myViewHolder.titletv.setText(data.getName());
         myViewHolder.rating.setRating(Tools.displayrating(Float.parseFloat(data.getVote_average())));
-        Tools.displayImageOriginal(context,myViewHolder.imageplay, Config.url_image + data.getBackdrop_path());
+        Tools.displayImageOriginal(context,myViewHolder.imageplay, Config.url_image + data.getPoster_path());
     }
 
     @Override

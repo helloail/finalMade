@@ -6,6 +6,16 @@
         android:layout_width="match_parent"
         android:layout_height="230dp">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <ImageView
             android:id="@+id/imageplay"
             android:contentDescription="image list item tv"
@@ -19,21 +29,18 @@
             android:layout_height="match_parent"
             android:background="@color/overlay_dark_20" />
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/bg_gradient2"
             android:layout_alignParentBottom="true"
             android:orientation="vertical"
             android:padding="@dimen/spacing_large">
 
-
             <androidx.appcompat.widget.AppCompatRatingBar
                 android:id="@+id/ratingbar"
                 app:layout_constraintBottom_toTopOf="@+id/titletv"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/titletv"
                 android:layout_marginTop="@dimen/spacing_xxxlarge"
                 style="?android:attr/ratingBarStyleSmall"
@@ -57,6 +64,8 @@
                 app:fontFamily="sans-serif-medium" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

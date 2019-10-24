@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.foryoudicodingsubmissionfour.R;
 import com.example.foryoudicodingsubmissionfour.adapter.Search.AdapterSearchTvShow;
+import com.example.foryoudicodingsubmissionfour.helper.SpacingItemDecoration;
 import com.example.foryoudicodingsubmissionfour.helper.Tools;
 import com.example.foryoudicodingsubmissionfour.model.Search.SearchTvShowInit;
 import com.example.foryoudicodingsubmissionfour.viewmodel.SearchTvShowViewModel;
@@ -84,7 +86,9 @@ public class SearchActivityTvShow extends AppCompatActivity implements  android.
     }
 
     private void  initRecyclerview(){
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.addItemDecoration(new SpacingItemDecoration(2, Tools.dpToPx(this, 8), true));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new AdapterSearchTvShow();

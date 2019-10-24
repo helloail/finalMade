@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -20,38 +21,19 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.NetworkError;
-import com.android.volley.NoConnectionError;
-import com.android.volley.ParseError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.ServerError;
-import com.android.volley.TimeoutError;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterList;
+
+import com.example.foryoudicodingsubmissionfour.helper.SpacingItemDecoration;
 import com.example.foryoudicodingsubmissionfour.helper.Tools;
-import com.example.foryoudicodingsubmissionfour.model.FilmInit;
 import com.example.foryoudicodingsubmissionfour.view.activity.search.SearchActivityTvShow;
 import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterTvShow;
 
 import com.example.foryoudicodingsubmissionfour.R;
 import com.example.foryoudicodingsubmissionfour.helper.Config;
 
-import com.example.foryoudicodingsubmissionfour.helper.MyApplication;
 import com.example.foryoudicodingsubmissionfour.helper.ViewAnimation;
 import com.example.foryoudicodingsubmissionfour.model.TvShowInit;
-import com.example.foryoudicodingsubmissionfour.viewmodel.MoviesViewModel;
 import com.example.foryoudicodingsubmissionfour.viewmodel.TvShowViewModel;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -79,7 +61,8 @@ public class TvShowFragment extends Fragment {
     }
 
     private void  initRecyclerview(){
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recyclerView.addItemDecoration(new SpacingItemDecoration(2, Tools.dpToPx(getContext(), 8), true));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }

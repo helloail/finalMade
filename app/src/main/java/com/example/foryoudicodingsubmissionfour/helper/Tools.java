@@ -3,11 +3,14 @@ package com.example.foryoudicodingsubmissionfour.helper;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
+
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -118,6 +121,11 @@ public class Tools {
 
     public static Float displayrating(Float rating){
         return rating/2;
+    }
+
+    public static int dpToPx(Context c, int dp) {
+        Resources r = c.getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
 }
