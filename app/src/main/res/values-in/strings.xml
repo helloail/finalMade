@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">ForYouDicodingSubmissionThree</string>
+    <string name="app_name">ForYouDicodingSubmissionFour</string>
     <string name="Language">Bahasa :</string>
 
     <string name="Judul">Judul :</string>
@@ -8,7 +8,7 @@
     <string name="Storyline">Jalan Cerita</string>
     <string name="menit">menit</string>
     <string name="review">ulasan</string>
-    <string name="title">Teman Warkop</string>
+    <string name="title">Film Saya</string>
     <string name="tvshow">SERIAL TV</string>
     <string name="movie">FILM</string>
     <string name="genre">Tayang Awal :</string>

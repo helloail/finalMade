@@ -1,5 +1,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">ForYouDicodingSubmissionThree</string>
+    <string name="app_name">ForYouDicodingSubmissionFour</string>
     <string name="Language">Language :</string>
     <string name="Judul">Title :</string>
     <string name="popularity">Popularity :</string>
@@ -7,7 +7,7 @@
     <string name="Storyline">Storyline</string>
     <string name="menit">minutes</string>
     <string name="review">review</string>
-    <string name="title">Warkop Partner</string>
+    <string name="title">My Film</string>
     <string name="tvshow">TV SHOW</string>
     <string name="movie">MOVIES</string>
     <string name="genre">First Air Date :</string>
