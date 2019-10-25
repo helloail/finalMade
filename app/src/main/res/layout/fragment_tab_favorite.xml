@@ -8,6 +8,7 @@
         android:id="@+id/tablayoutfav"
         app:tabGravity="fill"
         app:tabMode="fixed"
+        app:tabMaxWidth="0dp"
         android:background="@color/grey_900"
         app:tabIndicatorColor="@android:color/white"
         app:tabSelectedTextColor="@android:color/white"
