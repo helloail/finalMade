@@ -25,7 +25,6 @@ public class MainFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         initComponent(view);
-
         return  view;
     }
 

@@ -21,14 +21,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MoviesViewModel  extends ViewModel {
+public class MoviesViewModel extends ViewModel {
 
-
-    String TAG  = "view model movie";
+    String TAG = "view model movie";
 
     private MutableLiveData<ArrayList<FilmInit>> listmovie = new MutableLiveData<>();
 
-    public void setListmovie(){
+    public void setListmovie() {
 
         final ArrayList<FilmInit> listItems = new ArrayList<>();
 
@@ -42,10 +41,8 @@ public class MoviesViewModel  extends ViewModel {
 
 
                         Log.d("JsonMovies", response.toString());
-
                         try {
                             JSONArray jsonArrayData = response.getJSONArray("results");
-
                             for (int i = 0; i < jsonArrayData.length(); i++) {
                                 JSONObject jsonObjectData = jsonArrayData.getJSONObject(i);
                                 FilmInit data = new Gson().fromJson(jsonObjectData.toString(), new TypeToken<FilmInit>() {

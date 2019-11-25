@@ -26,7 +26,6 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.content_main) RelativeLayout contentmain;
-    @BindView(R.id.search_recycler) RecyclerView search_recycler;
     @BindView(R.id.bn_main) BottomNavigationView bottomnav;
 
     private ActionBar actionBar;
@@ -47,6 +46,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
+
     private boolean loadFragment(Fragment fragment){
         if (fragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fl_container, fragment).commit();

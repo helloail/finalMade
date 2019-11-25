@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +24,8 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AdapterSearchFilm extends RecyclerView.Adapter<AdapterSearchFilm.MyViewHolder>{
-    private ArrayList<SearchFilmInit> list  = new ArrayList<>();
+public class AdapterSearchFilm extends RecyclerView.Adapter<AdapterSearchFilm.MyViewHolder> {
+    private ArrayList<SearchFilmInit> list = new ArrayList<>();
     private Context context;
 
     public void setData(ArrayList<SearchFilmInit> items, Context context) {
@@ -41,10 +42,14 @@ public class AdapterSearchFilm extends RecyclerView.Adapter<AdapterSearchFilm.My
         ImageView imagelist;
         @BindView(R.id.titlevideo)
         TextView titlefilm;
-        @BindView(R.id.durasi)TextView durasi;
-        @BindView(R.id.ltdurasi)TextView ltdurasi;
-        @BindView(R.id.ltsutradara)TextView ltsutradara;
-        @BindView(R.id.sutradara)TextView sutradara;
+        @BindView(R.id.durasi)
+        TextView durasi;
+        @BindView(R.id.ltdurasi)
+        TextView ltdurasi;
+        @BindView(R.id.ltsutradara)
+        TextView ltsutradara;
+        @BindView(R.id.sutradara)
+        TextView sutradara;
         @BindView(R.id.ratingbar)
         RatingBar rating;
         @BindView(R.id.ly_list)
@@ -52,9 +57,10 @@ public class AdapterSearchFilm extends RecyclerView.Adapter<AdapterSearchFilm.My
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
+
     @NonNull
     @Override
     public AdapterSearchFilm.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -74,7 +80,7 @@ public class AdapterSearchFilm extends RecyclerView.Adapter<AdapterSearchFilm.My
         myViewHolder.ltdurasi.setText(ldurasi);
         myViewHolder.ltsutradara.setText(lsutradara);
         myViewHolder.titlefilm.setText(data.getTitle());
-        Tools.displayImageOriginal(context,myViewHolder.imagelist, Config.url_image + data.getPoster_path());
+        Tools.displayImageOriginal(context, myViewHolder.imagelist, Config.url_image + data.getPoster_path());
         myViewHolder.sutradara.setText(Tools.displaydate(data.getRelease_date()));
         myViewHolder.durasi.setText(Tools.displaylanguage(data.getOriginal_language()));
         myViewHolder.rating.setRating(Tools.displayrating(Float.parseFloat(data.getVote_average())));

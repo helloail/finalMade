@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AdapterSearchTvShow extends RecyclerView.Adapter<AdapterSearchTvShow.MyViewHolder>{
+public class AdapterSearchTvShow extends RecyclerView.Adapter<AdapterSearchTvShow.MyViewHolder> {
     private ArrayList<SearchTvShowInit> list = new ArrayList<>();
     private Context context;
 
@@ -44,9 +45,10 @@ public class AdapterSearchTvShow extends RecyclerView.Adapter<AdapterSearchTvSho
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
+
     @NonNull
     @Override
     public AdapterSearchTvShow.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -61,7 +63,7 @@ public class AdapterSearchTvShow extends RecyclerView.Adapter<AdapterSearchTvSho
         final SearchTvShowInit data = list.get(i);
         myViewHolder.titletv.setText(data.getName());
         myViewHolder.rating.setRating(Tools.displayrating(Float.parseFloat(data.getVote_average())));
-        Tools.displayImageOriginal(context,myViewHolder.imageplay, Config.url_image + data.getPoster_path());
+        Tools.displayImageOriginal(context, myViewHolder.imageplay, Config.url_image + data.getPoster_path());
     }
 
     @Override

@@ -2,38 +2,31 @@ package com.example.foryoudicodingsubmissionfour.view.fragment.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.cardview.widget.CardView;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-
-
-import com.example.foryoudicodingsubmissionfour.helper.SpacingItemDecoration;
-import com.example.foryoudicodingsubmissionfour.helper.Tools;
-import com.example.foryoudicodingsubmissionfour.view.activity.search.SearchActivityTvShow;
-import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterTvShow;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foryoudicodingsubmissionfour.R;
+import com.example.foryoudicodingsubmissionfour.adapter.main.AdapterTvShow;
 import com.example.foryoudicodingsubmissionfour.helper.Config;
-
+import com.example.foryoudicodingsubmissionfour.helper.SpacingItemDecoration;
+import com.example.foryoudicodingsubmissionfour.helper.Tools;
 import com.example.foryoudicodingsubmissionfour.helper.ViewAnimation;
 import com.example.foryoudicodingsubmissionfour.model.TvShowInit;
+import com.example.foryoudicodingsubmissionfour.view.activity.search.SearchActivityTvShow;
 import com.example.foryoudicodingsubmissionfour.viewmodel.TvShowViewModel;
-
 
 import java.util.ArrayList;
 
@@ -45,6 +38,7 @@ public class TvShowFragment extends Fragment {
     private AdapterTvShow mAdapter;
     private TvShowViewModel moviesViewModel;
     private LinearLayout lyt_progress;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tv, container, false);
@@ -60,14 +54,14 @@ public class TvShowFragment extends Fragment {
         initViewModel();
     }
 
-    private void  initRecyclerview(){
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+    private void initRecyclerview() {
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.addItemDecoration(new SpacingItemDecoration(2, Tools.dpToPx(getContext(), 8), true));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
-    private void initViewModel(){
+    private void initViewModel() {
         mAdapter = new AdapterTvShow();
         mAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(mAdapter);
@@ -78,12 +72,12 @@ public class TvShowFragment extends Fragment {
         moviesViewModel.getListTvShow().observe(this, new Observer<ArrayList<TvShowInit>>() {
             @Override
             public void onChanged(ArrayList<TvShowInit> tvShowInits) {
-            setmAdapter(tvShowInits);
+                setmAdapter(tvShowInits);
             }
         });
     }
 
-    private void setmAdapter(ArrayList<TvShowInit> tvShowInits ) {
+    private void setmAdapter(ArrayList<TvShowInit> tvShowInits) {
         if (tvShowInits == null) {
             Toast.makeText(getContext(), "Cannot Conect To Server", Toast.LENGTH_LONG).show();
         }
@@ -108,10 +102,11 @@ public class TvShowFragment extends Fragment {
             recyclerView.setVisibility(View.VISIBLE);
         }
     }
+
     @OnClick({R.id.search_bar})
-    public void Saearch(CardView cardView){
+    public void Saearch(CardView cardView) {
         final Intent intent = new Intent(getContext(), SearchActivityTvShow.class);
-        intent.putExtra("url",Config.url_serachtvshow);
+        intent.putExtra("url", Config.url_serachtvshow);
         getContext().startActivity(intent);
 
     }

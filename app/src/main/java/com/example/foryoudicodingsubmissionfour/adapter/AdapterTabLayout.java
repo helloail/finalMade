@@ -11,7 +11,7 @@ public class AdapterTabLayout extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
-    public AdapterTabLayout (FragmentManager manager) {
+    public AdapterTabLayout(FragmentManager manager) {
         super(manager);
     }
 

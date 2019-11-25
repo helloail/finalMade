@@ -7,11 +7,9 @@
     android:orientation="vertical">
 
 
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:fillViewport="true"
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -27,57 +25,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/spacing_xxlarge"
                 android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:layout_marginRight="@dimen/spacing_large"
                 android:layout_marginBottom="@dimen/spacing_middle"
-                android:layout_marginTop="@dimen/spacing_large"
-                android:layout_marginLeft="@dimen/spacing_large"
                 android:theme="@style/ThemeOverlay.AppCompat.Light"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="3dp"
                 app:cardElevation="3dp"
                 app:layout_collapseMode="pin">
 
-            <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="@dimen/spacing_xxlarge"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="@color/grey_60" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Search Film..."
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <View
+                        android:layout_width="@dimen/spacing_large"
+                        android:layout_height="0dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:scrollbars="none"
+                android:scrollingCache="true" />
 
-                <ImageButton
-                    android:layout_width="@dimen/spacing_xxlarge"
-                    android:layout_height="@dimen/spacing_xxlarge"
-                    android:background="@android:color/transparent"
-                    android:clickable="true"
-                    android:tint="@color/grey_60"
-                    android:src="@drawable/ic_search_black_24dp" />
-
-                <TextView
-                    android:gravity="center_vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:background="@android:color/transparent"
-                    android:text="Search Film..."
-                    android:maxLines="1"
-                    android:singleLine="true">
-
-                </TextView>
-
-                <View
-                    android:layout_width="@dimen/spacing_large"
-                    android:layout_height="0dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"
-            android:scrollingCache="true" />
-
-    </LinearLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
