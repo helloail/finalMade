@@ -18,6 +18,7 @@ import com.example.foryoudicodingsubmissionfour.R;
 import com.example.foryoudicodingsubmissionfour.helper.Tools;
 import com.example.foryoudicodingsubmissionfour.roomdb.Favorite_FilmInit;
 import com.example.foryoudicodingsubmissionfour.widget.WidgetReceiver;
+import com.example.foryoudicodingsubmissionfour.widget.WidgetService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,7 @@ public class DetailActivityMovie extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailmatch);
+        setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         initComponent();
         Tools.initstetho(getApplicationContext());

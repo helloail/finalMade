@@ -62,7 +62,7 @@ public class DetailActivityTvShow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailmatch);
+        setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
 
         initComponent();
